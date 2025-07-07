@@ -1,0 +1,115 @@
+body {
+  background-color: #9e4de6; /* Background utama */
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #4a1e7d;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.navbar .navbar-brand,
+.navbar .nav > li > a,
+.navbar .navbar-right > li > a {
+  color: white !important;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .navbar-right > li > a:hover {
+  color: #ffdd57 !important;
+  background-color: transparent !important;
+  transition: 0.3s ease;
+}
+
+/* Tabel */
+.table-container {
+  background-color: #4a1e7d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.table th,
+.table td {
+  color: white;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #341864;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+/* Judul */
+h3.text-center {
+  margin-bottom: 30px;
+  color: #ffeaea;
+  text-shadow: 1px 1px 2px #00000050;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px;
+  }
+
+  .navbar .navbar-right {
+    float: none;
+    margin-top: 10px;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #341864;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

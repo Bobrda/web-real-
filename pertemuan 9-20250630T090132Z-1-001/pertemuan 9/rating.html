@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rating Perusahaan</title>
+  <link rel="stylesheet" href="bs/css/bootstrap.css">
+  <style>
+    body {
+      background-color: #9e4de6;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar-custom {
+      background-color: #4a1e7d;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav > li > a,
+    .navbar-custom .navbar-right > li > a {
+      color: white !important;
+    }
+
+    .navbar-custom .nav > li > a:hover,
+    .navbar-custom .navbar-right > li > a:hover {
+      color: #ffdd57 !important;
+      background-color: transparent !important;
+      transition: 0.3s ease;
+    }
+
+    .rating-container {
+      background-color: #4a1e7d;
+      padding: 30px;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .rating-form {
+      background-color: #a44fe7;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .rating-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .rating-stars {
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .rating-stars span.filled {
+      color: #ffdd57;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    .checkbox label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Iconic_OpenAI_Logo.png" alt="Logo" width="30" style="display:inline-block; margin-right:10px;">Rating Perusaha
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Rating perusahaan</a></li>
+        <li><a href="#">Beri Rating perusahaan</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="rating-container">
+    <h4>Berikan ulasan untuk perusahaan magang kamu</h4>
+    <form class="rating-form">
+      <div class="form-group">
+        <label>1. Nama Perusahaan</label>
+        <select class="form-control">
+          <option>Pilih perusahaan</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>2. Rating kenyamanan kamu</label>
+        <div class="rating-stars" id="ratingStars">
+          <span data-value="1">&#9734;</span>
+          <span data-value="2">&#9734;</span>
+          <span data-value="3">&#9734;</span>
+          <span data-value="4">&#9734;</span>
+          <span data-value="5">&#9734;</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>3. Komentar untuk perusahaan kamu</label>
+        <input type="text" placeholder="Komentar...">
+      </div>
+
+      <div class="form-group">
+        <label>4. Apakah kamu merekomendasikan perusahaan kamu untuk yang lain?</label><br>
+        <div class="checkbox">
+          <label><input type="checkbox"> Ya</label>
+          <label><input type="checkbox"> Tidak</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('#ratingStars span');
+    stars.forEach(star => {
+      star.addEventListener('click', function () {
+        const rating = parseInt(this.getAttribute('data-value'));
+        stars.forEach((s, i) => {
+          s.innerHTML = i < rating ? '&#9733;' : '&#9734;';
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
